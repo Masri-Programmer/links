@@ -195,15 +195,15 @@
                     <h2 class="trust-title">Why work with me</h2>
                     <div class="trust-stats">
                         <div class="trust-stat">
-                            <span class="stat-value">5+</span>
+                            <span class="stat-value"><span class="counter" data-target="5">0</span>+</span>
                             <span class="stat-label">Years Experience</span>
                         </div>
                         <div class="trust-stat">
-                            <span class="stat-value">40+</span>
+                            <span class="stat-value"><span class="counter" data-target="40">0</span>+</span>
                             <span class="stat-label">Projects</span>
                         </div>
                         <div class="trust-stat">
-                            <span class="stat-value">⭐ 5.0</span>
+                            <span class="stat-value">⭐ <span class="counter" data-target="5.0" data-decimals="1">0.0</span></span>
                             <span class="stat-label">Google Rating</span>
                         </div>
                     </div>
@@ -271,6 +271,41 @@
             }
 
             initStickyCta();
+            initCounters();
+        }
+
+        // Number counting animation
+        function initCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200; // The lower the slower
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = +counter.getAttribute('data-target');
+                        const decimals = +counter.getAttribute('data-decimals') || 0;
+                        const inc = target / speed;
+
+                        function updateCount() {
+                            const count = +counter.innerText;
+                            if (count < target) {
+                                counter.innerText = (count + inc).toFixed(decimals);
+                                setTimeout(updateCount, 10);
+                            } else {
+                                counter.innerText = target.toFixed(decimals);
+                            }
+                        }
+
+                        updateCount();
+                        observer.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
         }
 
         init();
