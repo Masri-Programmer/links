@@ -111,7 +111,13 @@ body {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding: 10px;
+  animation: logoFloat 4s ease-in-out infinite;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
 }
 
 .logo:hover {
@@ -246,16 +252,20 @@ body {
 }
 
 @keyframes buttonSlideIn {
-  to {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.95);
+  }
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
 .button:hover {
   filter: brightness(1.15);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px hsla(0, 0%, 0%, 0.3);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.4);
   color: var(--button-text, var(--color-text));
   text-decoration: none;
 }

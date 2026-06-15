@@ -239,6 +239,12 @@
 	--button-background:#f3f1e6;
 	--button-border:1px solid #212121;
 }
+/* Google */
+.button-google {
+	--button-text:#3c4043;
+	--button-background:#ffffff;
+	--button-border:1px solid #dadce0;
+}
 
 /* Google Black */
 .button-google-black {
