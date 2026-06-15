@@ -10,7 +10,7 @@
   /* Colors — from invoice template */
   --color-text:        hsl(0 0% 92.1%);
   --color-text-muted:  hsl(0 0% 60%);
-  --color-bg:          hsl(220 20% 10%);
+  --color-bg:          #000000;
   --color-surface:     hsla(0, 0%, 92%, 0.08);
   --color-border:      hsla(0, 0%, 92%, 0.15);
   --color-accent:      #3b82f6;
@@ -42,7 +42,7 @@
 
 /* ── FOUC Prevention ────────────────────────────── */
 html {
-  background-color: hsl(220 20% 10%);
+  background-color: #000000;
 }
 
 /* ── Base ───────────────────────────────────────── */
@@ -71,7 +71,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   min-height: 100vh;
-  padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-xl);
+  padding: var(--spacing-2xl) var(--spacing-md) 6.5rem;
 }
 
 /* ── Glass Card ─────────────────────────────────── */
@@ -247,8 +247,8 @@ body {
 
   /* Staggered animation */
   opacity: 0;
-  transform: translateY(12px);
-  animation: buttonSlideIn 0.4s ease-out forwards;
+  transform: translateY(30px);
+  animation: buttonSlideIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) both;
 }
 
 @keyframes buttonSlideIn {
@@ -396,7 +396,7 @@ body {
   right: 0;
   z-index: 50;
   padding: var(--spacing-sm) var(--spacing-md);
-  background: hsla(220, 20%, 8%, 0.92);
+  background: #ffff;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid var(--glass-border);
@@ -444,11 +444,27 @@ body {
 /* ── Loading State ──────────────────────────────── */
 .loading-placeholder {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 200px;
-  color: var(--color-text-muted);
-  font-size: 0.875rem;
+  min-height: 240px;
+}
+
+.loading-logo {
+  width: 64px;
+  height: 64px;
+  animation: loadingPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes loadingPulse {
+  0%, 100% {
+    transform: scale(0.9);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.95;
+  }
 }
 
 /* ── Skip Link (Accessibility) ──────────────────── */
@@ -483,7 +499,7 @@ body {
   }
 
   .page {
-    padding: var(--spacing-lg) var(--spacing-sm) 5rem;
+    padding: var(--spacing-lg) var(--spacing-sm) 6.5rem;
   }
 
   .trust-stats {
@@ -511,7 +527,7 @@ body {
 @media (min-width: 769px) {
   .page {
     justify-content: center;
-    padding-bottom: var(--spacing-2xl);
+    padding-bottom: 6.5rem;
   }
 }
 
@@ -593,35 +609,34 @@ body {
   }
 }
 
-.tracking-in-contract {
-	-webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-	        animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+.focus-in-expand {
+	-webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-@-webkit-keyframes tracking-in-contract {
+@-webkit-keyframes focus-in-expand {
   0% {
-    letter-spacing: 1em;
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
     opacity: 0;
   }
-  40% {
-    opacity: 0.6;
-  }
   100% {
-    letter-spacing: normal;
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
     opacity: 1;
   }
 }
-@keyframes tracking-in-contract {
+@keyframes focus-in-expand {
   0% {
-    letter-spacing: 1em;
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
     opacity: 0;
   }
-  40% {
-    opacity: 0.6;
-  }
   100% {
-    letter-spacing: normal;
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
     opacity: 1;
   }
 }
-

@@ -637,3 +637,9 @@
 	--button-background:#0B5CFF;
   --button-border:1px solid #FFFFFF;
 }
+
+/* Upwork */
+.button-upwork {
+	--button-text:#ffffff;
+	--button-background:#14a800;
+}

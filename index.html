@@ -50,12 +50,12 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css?v=4">
-    <link rel="stylesheet" href="css/brands.css">
+    <link rel="stylesheet" href="css/style.css?v=9">
+    <link rel="stylesheet" href="css/brands.css?v=2">
 
     <!-- FOUC Prevention (from Blade template pattern) -->
     <style>
-        html { background-color: hsl(220 20% 10%); }
+        html { background-color: #000000; }
     </style>
 
     <!-- Structured Data — Schema.org Person -->
@@ -69,7 +69,7 @@
         "sameAs": [
             "https://github.com/Masri-Programmer",
             "https://www.instagram.com/masri.programmer/",
-            "https://www.facebook.com/mhamad.masri8",
+            "https://www.facebook.com/profile.php?id=61582289406696",
             "https://www.linkedin.com/in/mohamad-masri-89778915a/",
             "https://masri.blog"
         ],
@@ -92,7 +92,7 @@
     <main class="page" id="page" role="main">
         <div class="card" id="card">
             <div class="loading-placeholder" id="loading" aria-live="polite">
-                Loading...
+                <img class="loading-logo" src="https://masri.uber.space/images/email/logo.svg" alt="Masri Programmer Logo" width="64" height="64" loading="eager">
             </div>
         </div>
     </main>
@@ -118,7 +118,7 @@
                 <a href="https://masri-programmer.de/" target="_blank" rel="noopener" class="logo" aria-label="Visit ${profile.company.name} website">
                     <img src="${profile.company.logo_url}" alt="${profile.company.name} Logo" width="44" height="44" loading="eager">
                 </a>
-                <h1 class="tracking-in-contract">${profile.company.name}</h1>
+                <h1 class="focus-in-expand">${profile.company.name}</h1>
                 <p class="subtitle">Software Developer · Oldenburg, Germany</p>
                 <div class="contact-info">
                     <a href="tel:${profile.contact.phone_link}" aria-label="Call ${profile.company.name}">${profile.contact.phone_display}</a>
@@ -142,45 +142,49 @@
                     <img class="icon" aria-hidden="true" src="images/icons/cal.svg" alt="" width="19" height="19">Schedule a Call
                 </a>
 
+                <!-- <a class="button button-upwork" href="https://www.upwork.com/freelancers/~0141405ef520d50588?mp_source=share" target="_blank" rel="noopener" role="button" style="animation-delay: 0.15s" aria-label="Hire me on Upwork">
+                    <img class="icon" aria-hidden="true" src="images/icons/upwork.svg" alt="" width="19" height="19">Upwork
+                </a> -->
+
                 <div class="button-group-separator"></div>
                 <span class="section-label" aria-hidden="true">Explore</span>
 
-                <a class="button button-default" href="https://masri-programmer.de/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.15s" aria-label="Visit my website masri-programmer.de">
+                <a class="button button-default" href="https://masri-programmer.de/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.2s" aria-label="Visit my website masri-programmer.de">
                     <img class="icon" aria-hidden="true" src="images/icons/generic-website.svg" alt="" width="19" height="19">Website
                 </a>
 
-                <a class="button button-default" href="https://masri.blog" target="_blank" rel="noopener" role="button" style="animation-delay: 0.2s" aria-label="Read my blog at masri.blog">
+                <a class="button button-default" href="https://masri.blog" target="_blank" rel="noopener" role="button" style="animation-delay: 0.25s" aria-label="Read my blog at masri.blog">
                     <img class="icon" aria-hidden="true" src="images/icons/generic-blog.svg" alt="" width="19" height="19">Blog
                 </a>
 
-                <a class="button button-obsidian" href="https://omnivault.masri-programmer.de/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.25s" aria-label="Explore Omnivault AI Obsidian Template">
+                <a class="button button-obsidian" href="https://omnivault.masri-programmer.de/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.3s" aria-label="Explore Omnivault AI Obsidian Template">
                     <img class="icon" aria-hidden="true" src="images/icons/obsidian.svg" alt="" width="19" height="19">Omnivault AI
                 </a>
 
                 <div class="button-group-separator"></div>
                 <span class="section-label" aria-hidden="true">Connect</span>
 
-                <a class="button button-github" href="https://github.com/Masri-Programmer" target="_blank" rel="noopener" role="button" style="animation-delay: 0.3s" aria-label="View my GitHub profile">
+                <a class="button button-github" href="https://github.com/Masri-Programmer" target="_blank" rel="noopener" role="button" style="animation-delay: 0.35s" aria-label="View my GitHub profile">
                     <img class="icon" aria-hidden="true" src="images/icons/github.svg" alt="" width="19" height="19">GitHub
                 </a>
 
-                <a class="button button-instagram" href="https://www.instagram.com/masri.programmer/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.35s" aria-label="Follow me on Instagram">
+                <a class="button button-instagram" href="https://www.instagram.com/masri.programmer/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.4s" aria-label="Follow me on Instagram">
                     <img class="icon" aria-hidden="true" src="images/icons/instagram.svg" alt="" width="19" height="19">Instagram
                 </a>
 
-                <a class="button button-faceb" href="https://www.facebook.com/mhamad.masri8" target="_blank" rel="noopener" role="button" style="animation-delay: 0.4s" aria-label="Connect on Facebook">
+                <a class="button button-faceb" href="https://www.facebook.com/profile.php?id=61582289406696" target="_blank" rel="noopener" role="button" style="animation-delay: 0.45s" aria-label="Connect on Facebook">
                     <img class="icon" aria-hidden="true" src="images/icons/facebook.svg" alt="" width="19" height="19">Facebook
                 </a>
 
-                <a class="button button-linked" href="https://www.linkedin.com/in/mohamad-masri-89778915a/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.45s" aria-label="Connect on LinkedIn">
+                <a class="button button-linked" href="https://www.linkedin.com/in/mohamad-masri-89778915a/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.5s" aria-label="Connect on LinkedIn">
                     <img class="icon" aria-hidden="true" src="images/icons/linkedin.svg" alt="" width="19" height="19">LinkedIn
                 </a>
 
-                <a class="button button-whatsapp" href="https://wa.me/4917631579669" target="_blank" rel="noopener" role="button" style="animation-delay: 0.5s" aria-label="Message me on WhatsApp">
+                <a class="button button-whatsapp" href="https://wa.me/4917631579669" target="_blank" rel="noopener" role="button" style="animation-delay: 0.55s" aria-label="Message me on WhatsApp">
                     <img class="icon" aria-hidden="true" src="images/icons/whatsapp.svg" alt="" width="19" height="19">WhatsApp
                 </a>
 
-                <a class="button button-google" href="https://g.page/r/CQl3_s6R1DkiEAE/review" target="_blank" rel="noopener" role="button" style="animation-delay: 0.55s" aria-label="Leave a Google review">
+                <a class="button button-google" href="https://g.page/r/CQl3_s6R1DkiEAE/review" target="_blank" rel="noopener" role="button" style="animation-delay: 0.6s" aria-label="Leave a Google review">
                     <img class="icon" aria-hidden="true" src="images/icons/google.svg" alt="" width="19" height="19">Google Reviews
                 </a>
             </nav>
