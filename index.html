@@ -1,129 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Core Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="format-detection" content="telephone=no">
 
     <!-- SEO -->
-    <title>Masri Programmer — Links</title>
-    <meta name="description" content="All links for Masri Programmer — Software Developer in Oldenburg, Germany. Website, blog, social media, scheduling, and more.">
-    <meta name="keywords" content="Masri Programmer, Software Developer, Oldenburg, Germany, links">
+    <title>Masri Programmer — Links | Software Developer in Oldenburg</title>
+    <meta name="description" content="Connect with Masri Programmer — Software Developer in Oldenburg, Germany. Book a consultation, explore projects, read the blog, and follow on social media.">
+    <meta name="keywords" content="Masri Programmer, Mohamad Masri, Software Developer, Oldenburg, Germany, Web Development, Freelance Developer, Laravel, PHP, JavaScript">
     <meta name="author" content="Mohamad Masri">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://links.masri-programmer.de">
-    <link rel="icon" type="image/x-icon" href="images/avatar.png">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Masri Programmer — Links">
-    <meta property="og:description" content="All links for Masri Programmer — Software Developer in Oldenburg, Germany.">
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Masri Programmer">
+    <meta property="og:title" content="Masri Programmer — All Links">
+    <meta property="og:description" content="Connect with Masri Programmer — Software Developer in Oldenburg, Germany. Book a consultation, explore projects, and follow on social media.">
     <meta property="og:url" content="https://links.masri-programmer.de">
+    <meta property="og:image" content="https://masri.uber.space/images/email/logo.svg">
+    <meta property="og:locale" content="en_US">
 
-    <!-- Fonts — Inter from bunny.net (same as invoice template) -->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Masri Programmer — All Links">
+    <meta name="twitter:description" content="Connect with Masri Programmer — Software Developer in Oldenburg, Germany.">
+    <meta name="twitter:image" content="https://masri.uber.space/images/email/logo.svg">
+
+    <!-- Geo Meta (Local SEO for Oldenburg) -->
+    <meta name="geo.region" content="DE-NI">
+    <meta name="geo.placename" content="Oldenburg, Deutschland">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/avatar.png">
+    <link rel="apple-touch-icon" href="images/avatar.png">
+
+    <!-- Preconnect (Performance — from Blade template pattern) -->
+    <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+    <link rel="preconnect" href="https://masri.uber.space" crossorigin>
+
+    <!-- Fonts — Inter from bunny.net (matching Blade template) -->
+    <link rel="preload" as="style" href="https://fonts.bunny.net/css?family=inter:400,500,600,700">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700" rel="stylesheet">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/brands.css">
+
+    <!-- FOUC Prevention (from Blade template pattern) -->
+    <style>
+        html { background-color: hsl(220 20% 10%); }
+    </style>
+
+    <!-- Structured Data — Schema.org Person -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mohamad Masri",
+        "alternateName": "Masri Programmer",
+        "url": "https://masri-programmer.de",
+        "sameAs": [
+            "https://github.com/Masri-Programmer",
+            "https://www.instagram.com/masri.programmer/",
+            "https://www.facebook.com/mhamad.masri8",
+            "https://www.linkedin.com/in/mohamad-masri-89778915a/",
+            "https://masri.blog"
+        ],
+        "jobTitle": "Software Developer",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Oldenburg",
+            "addressRegion": "Niedersachsen",
+            "addressCountry": "DE"
+        },
+        "knowsAbout": ["Web Development", "Laravel", "PHP", "JavaScript", "Software Engineering"]
+    }
+    </script>
 </head>
 
 <body>
-    <main class="page" id="page">
+    <!-- Skip Link (Accessibility) -->
+    <a href="#links" class="skip-link">Skip to links</a>
+
+    <main class="page" id="page" role="main">
         <div class="card" id="card">
-            <div class="loading-placeholder" id="loading">
+            <div class="loading-placeholder" id="loading" aria-live="polite">
                 Loading...
             </div>
         </div>
     </main>
 
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-cta" id="stickyCta" role="complementary" aria-label="Quick actions">
+        <span class="sticky-cta-text">Let's work together</span>
+        <a href="https://cal.com/masri-programmer-f7j951/30min?duration=30" target="_blank" rel="noopener" class="sticky-cta-button">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            Book a Call
+        </a>
+    </div>
+
     <script>
         function render(profile) {
-            // Set background image from profile data
+            // Set background image
             document.body.style.backgroundImage = `url('${profile.company.background_url}')`;
 
-            // Build the page content
             document.getElementById('card').innerHTML = `
                 <!-- Profile Header -->
                 <header class="profile">
-                    <div class="logo">
-                        <img src="${profile.company.logo_url}" alt="${profile.company.name} Logo">
-                    </div>
+                    <a href="https://masri-programmer.de/" target="_blank" rel="noopener" class="logo" aria-label="Visit ${profile.company.name} website">
+                        <img src="${profile.company.logo_url}" alt="${profile.company.name} Logo" width="44" height="44" loading="eager">
+                    </a>
                     <h1>${profile.company.name}</h1>
                     <p class="subtitle">Software Developer · Oldenburg, Germany</p>
                     <div class="contact-info">
-                        <span>${profile.contact.street} · ${profile.contact.city}</span><br>
-                        <a href="tel:${profile.contact.phone_link}">${profile.contact.phone_display}</a>
+                        <span>Oldenburg, Germany</span><br>
+                        <a href="tel:${profile.contact.phone_link}" aria-label="Call ${profile.company.name}">${profile.contact.phone_display}</a>
+                    </div>
+                    <div class="availability-badge" aria-label="Currently available for projects">
+                        <span class="pulse-dot" aria-hidden="true"></span>
+                        Available for Projects
                     </div>
                 </header>
 
-                <hr class="divider">
+                <hr class="divider" aria-hidden="true">
 
                 <!-- Link Buttons -->
-                <nav class="button-stack" role="navigation" aria-label="Social and business links">
+                <nav class="button-stack" id="links" role="navigation" aria-label="Social and business links">
 
-                    <a class="button button-coffee" href="https://buymeacoffee.com/mohmasri97u" target="_blank" rel="noopener" role="button" style="animation-delay: 0.05s">
-                        <img class="icon" aria-hidden="true" src="images/icons/buy-me-a-coffee.svg" alt="">Buy Me A Coffee
+                    <span class="section-label" aria-hidden="true">Work with me</span>
+
+                    <a class="button button-coffee" href="https://buymeacoffee.com/mohmasri97u" target="_blank" rel="noopener" role="button" style="animation-delay: 0.05s" aria-label="Support me on Buy Me A Coffee">
+                        <img class="icon" aria-hidden="true" src="images/icons/buy-me-a-coffee.svg" alt="" width="19" height="19">Buy Me A Coffee
                     </a>
 
-                    <a class="button button-cal" href="https://cal.com/masri-programmer-f7j951/30min?duration=30" target="_blank" rel="noopener" role="button" style="animation-delay: 0.1s">
-                        <img class="icon" aria-hidden="true" src="images/icons/cal.svg" alt="">Schedule a Call
+                    <a class="button button-cal" href="https://cal.com/masri-programmer-f7j951/30min?duration=30" target="_blank" rel="noopener" role="button" style="animation-delay: 0.1s" aria-label="Schedule a 30-minute call via Cal.com">
+                        <img class="icon" aria-hidden="true" src="images/icons/cal.svg" alt="" width="19" height="19">Schedule a Call
                     </a>
 
-                    <a class="button button-default" href="https://masri-programmer.de/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.15s">
-                        <img class="icon" aria-hidden="true" src="images/icons/generic-website.svg" alt="">Website
+                    <div class="button-group-separator"></div>
+                    <span class="section-label" aria-hidden="true">Explore</span>
+
+                    <a class="button button-default" href="https://masri-programmer.de/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.15s" aria-label="Visit my website masri-programmer.de">
+                        <img class="icon" aria-hidden="true" src="images/icons/generic-website.svg" alt="" width="19" height="19">Website
                     </a>
 
-                    <a class="button button-default" href="https://masri.blog" target="_blank" rel="noopener" role="button" style="animation-delay: 0.2s">
-                        <img class="icon" aria-hidden="true" src="images/icons/generic-blog.svg" alt="">Blog
+                    <a class="button button-default" href="https://masri.blog" target="_blank" rel="noopener" role="button" style="animation-delay: 0.2s" aria-label="Read my blog at masri.blog">
+                        <img class="icon" aria-hidden="true" src="images/icons/generic-blog.svg" alt="" width="19" height="19">Blog
                     </a>
 
-                    <a class="button button-obsidian" href="https://omnivault.masri-programmer.de/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.25s">
-                        <img class="icon" aria-hidden="true" src="images/icons/obsidian.svg" alt="">Omnivault AI
+                    <a class="button button-obsidian" href="https://omnivault.masri-programmer.de/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.25s" aria-label="Explore Omnivault AI Obsidian Template">
+                        <img class="icon" aria-hidden="true" src="images/icons/obsidian.svg" alt="" width="19" height="19">Omnivault AI
                     </a>
 
-                    <a class="button button-github" href="https://github.com/Masri-Programmer" target="_blank" rel="noopener" role="button" style="animation-delay: 0.3s">
-                        <img class="icon" aria-hidden="true" src="images/icons/github.svg" alt="">GitHub
+                    <div class="button-group-separator"></div>
+                    <span class="section-label" aria-hidden="true">Connect</span>
+
+                    <a class="button button-github" href="https://github.com/Masri-Programmer" target="_blank" rel="noopener" role="button" style="animation-delay: 0.3s" aria-label="View my GitHub profile">
+                        <img class="icon" aria-hidden="true" src="images/icons/github.svg" alt="" width="19" height="19">GitHub
                     </a>
 
-                    <a class="button button-instagram" href="https://www.instagram.com/masri.programmer/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.35s">
-                        <img class="icon" aria-hidden="true" src="images/icons/instagram.svg" alt="">Instagram
+                    <a class="button button-instagram" href="https://www.instagram.com/masri.programmer/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.35s" aria-label="Follow me on Instagram">
+                        <img class="icon" aria-hidden="true" src="images/icons/instagram.svg" alt="" width="19" height="19">Instagram
                     </a>
 
-                    <a class="button button-faceb" href="https://www.facebook.com/mhamad.masri8" target="_blank" rel="noopener" role="button" style="animation-delay: 0.4s">
-                        <img class="icon" aria-hidden="true" src="images/icons/facebook.svg" alt="">Facebook
+                    <a class="button button-faceb" href="https://www.facebook.com/mhamad.masri8" target="_blank" rel="noopener" role="button" style="animation-delay: 0.4s" aria-label="Connect on Facebook">
+                        <img class="icon" aria-hidden="true" src="images/icons/facebook.svg" alt="" width="19" height="19">Facebook
                     </a>
 
-                    <a class="button button-linked" href="https://www.linkedin.com/in/mohamad-masri-89778915a/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.45s">
-                        <img class="icon" aria-hidden="true" src="images/icons/linkedin.svg" alt="">LinkedIn
+                    <a class="button button-linked" href="https://www.linkedin.com/in/mohamad-masri-89778915a/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.45s" aria-label="Connect on LinkedIn">
+                        <img class="icon" aria-hidden="true" src="images/icons/linkedin.svg" alt="" width="19" height="19">LinkedIn
                     </a>
 
-                    <a class="button button-whatsapp" href="https://wa.me/4917631579669" target="_blank" rel="noopener" role="button" style="animation-delay: 0.5s">
-                        <img class="icon" aria-hidden="true" src="images/icons/whatsapp.svg" alt="">WhatsApp
+                    <a class="button button-whatsapp" href="https://wa.me/4917631579669" target="_blank" rel="noopener" role="button" style="animation-delay: 0.5s" aria-label="Message me on WhatsApp">
+                        <img class="icon" aria-hidden="true" src="images/icons/whatsapp.svg" alt="" width="19" height="19">WhatsApp
                     </a>
 
-                    <a class="button button-default" href="https://g.page/r/CQl3_s6R1DkiEAE/review" target="_blank" rel="noopener" role="button" style="animation-delay: 0.55s">
-                        <img class="icon" aria-hidden="true" src="images/icons/generic-review.svg" alt="">Google Reviews
+                    <a class="button button-default" href="https://g.page/r/CQl3_s6R1DkiEAE/review" target="_blank" rel="noopener" role="button" style="animation-delay: 0.55s" aria-label="Leave a Google review">
+                        <img class="icon" aria-hidden="true" src="images/icons/generic-review.svg" alt="" width="19" height="19">Google Reviews
                     </a>
 
                 </nav>
 
+                <!-- Social Proof / Trust Section -->
+                <section class="trust-section" aria-label="Experience highlights">
+                    <h2 class="trust-title">Why work with me</h2>
+                    <div class="trust-stats">
+                        <div class="trust-stat">
+                            <span class="stat-value">7+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="trust-stat">
+                            <span class="stat-value">50+</span>
+                            <span class="stat-label">Projects Delivered</span>
+                        </div>
+                        <div class="trust-stat">
+                            <span class="stat-value">⭐ 5.0</span>
+                            <span class="stat-label">Google Rating</span>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Footer -->
-                <footer class="footer">
-                    <a href="mailto:${profile.contact.email}" class="email-link">
-                        <svg class="email-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <footer class="footer" role="contentinfo">
+                    <a href="mailto:${profile.contact.email}" class="email-link" aria-label="Send email to ${profile.contact.email}">
+                        <svg class="email-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
                         ${profile.contact.email}
                     </a>
                     <p class="copyright">
-                        Building software since 2018 ·
-                        <a href="https://github.com/Masri-Programmer" target="_blank" rel="noopener">${profile.company.name}</a>
+                        © ${new Date().getFullYear()} ${profile.company.name} · Building software since 2018
                     </p>
                 </footer>
             `;
         }
 
-        // Initialize — fetch private.json and render
+        // Sticky CTA — show after scrolling past the card header
+        function initStickyCta() {
+            const cta = document.getElementById('stickyCta');
+            if (!cta) return;
+
+            let ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        if (window.scrollY > 300) {
+                            cta.classList.add('visible');
+                        } else {
+                            cta.classList.remove('visible');
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+        }
+
+        // Initialize
         async function init() {
             try {
                 const res = await fetch('./private.json');
@@ -132,7 +252,6 @@
                 render(profile);
             } catch (err) {
                 console.error(err);
-                // Fallback: render with hardcoded defaults if JSON fails (e.g. on file:// protocol)
                 render({
                     company: {
                         name: 'Masri Programmer',
@@ -140,7 +259,7 @@
                         background_url: 'https://masri.uber.space/images/email/bg2.png'
                     },
                     contact: {
-                        street: 'Nettelbeckstr. 10',
+                        street: '',
                         city: '26131 Oldenburg',
                         phone_display: '+49 (176) 31579669',
                         phone_link: '+4917631579669',
@@ -148,6 +267,8 @@
                     }
                 });
             }
+
+            initStickyCta();
         }
 
         init();

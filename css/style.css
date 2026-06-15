@@ -2,22 +2,25 @@
  * Masri Programmer — Links Page
  * Design system derived from rechnung_vorlage.html
  * Glassmorphism · Inter · Dark background
+ * v2.0 — Production-ready with FOUC prevention, accessibility, CRO enhancements
  */
 
 /* ── Custom Properties ─────────────────────────── */
 :root {
   /* Colors — from invoice template */
-  --color-text:        hsl(0 0% 92.1%);      /* secondary */
-  --color-text-muted:  hsl(0 0% 70%);
+  --color-text:        hsl(0 0% 92.1%);
+  --color-text-muted:  hsl(0 0% 60%);
   --color-bg:          hsl(220 20% 10%);
   --color-surface:     hsla(0, 0%, 92%, 0.08);
   --color-border:      hsla(0, 0%, 92%, 0.15);
-  --color-accent:      #3b82f6;               /* blue-500 */
+  --color-accent:      #3b82f6;
+  --color-accent-hover:#60a5fa;
+  --color-success:     #22c55e;
 
   /* Glass card */
   --glass-bg:          hsla(0, 0%, 100%, 0.06);
   --glass-border:      hsla(0, 0%, 100%, 0.12);
-  --glass-blur:        16px;
+  --glass-blur:        20px;
 
   /* Typography */
   --font-sans: 'Inter', 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -31,9 +34,15 @@
   --spacing-2xl: 3rem;
 
   /* Radius */
-  --radius-md: 0.625rem;
-  --radius-lg: 0.875rem;
+  --radius-sm:   0.5rem;
+  --radius-md:   0.625rem;
+  --radius-lg:   0.875rem;
   --radius-full: 9999px;
+}
+
+/* ── FOUC Prevention ────────────────────────────── */
+html {
+  background-color: hsl(220 20% 10%);
 }
 
 /* ── Base ───────────────────────────────────────── */
@@ -60,9 +69,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 100vh;
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-xl);
 }
 
 /* ── Glass Card ─────────────────────────────────── */
@@ -90,8 +99,8 @@ body {
 }
 
 .logo {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   margin: 0 auto var(--spacing-lg);
   display: flex;
   align-items: center;
@@ -101,12 +110,13 @@ body {
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  padding: 8px;
-  transition: transform 0.3s ease;
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo:hover {
   transform: scale(1.08);
+  box-shadow: 0 4px 24px hsla(0, 0%, 100%, 0.06);
 }
 
 .logo img {
@@ -134,7 +144,7 @@ body {
 .profile .contact-info {
   font-size: 0.75rem;
   color: var(--color-text-muted);
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 .profile .contact-info a {
@@ -143,16 +153,60 @@ body {
   transition: color 0.2s ease;
 }
 
-.profile .contact-info a:hover {
+.profile .contact-info a:hover,
+.profile .contact-info a:focus-visible {
   color: var(--color-text);
 }
 
+/* ── Availability Badge ─────────────────────────── */
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-success);
+  border: 1px solid hsla(142, 71%, 45%, 0.25);
+  border-radius: var(--radius-full);
+  background: hsla(142, 71%, 45%, 0.08);
+  margin-top: var(--spacing-md);
+}
+
+.availability-badge .pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-success);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* ── Divider ────────────────────────────────────── */
 .divider {
   width: 60px;
   height: 1px;
   background: var(--glass-border);
   margin: 0 auto var(--spacing-xl);
   border: none;
+}
+
+/* ── Section Labels ─────────────────────────────── */
+.section-label {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-sm);
+  text-align: left;
 }
 
 /* ── Buttons / Links ────────────────────────────── */
@@ -185,7 +239,7 @@ body {
   text-align: center;
   transition: filter 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 
-  /* Staggered animation — set via JS */
+  /* Staggered animation */
   opacity: 0;
   transform: translateY(12px);
   animation: buttonSlideIn 0.4s ease-out forwards;
@@ -211,6 +265,16 @@ body {
   filter: brightness(0.95);
 }
 
+.button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ── Button Group Separator ─────────────────────── */
+.button-group-separator {
+  height: var(--spacing-sm);
+}
+
 /* ── Button Icons ───────────────────────────────── */
 .icon {
   width: 1.2rem;
@@ -218,6 +282,51 @@ body {
   margin-right: 0.5rem;
   flex-shrink: 0;
   filter: var(--icon-filter, none);
+}
+
+/* ── Social Proof / Trust Badge ─────────────────── */
+.trust-section {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.trust-title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+}
+
+.trust-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: var(--spacing-md);
+}
+
+.trust-stat {
+  text-align: center;
+}
+
+.trust-stat .stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.trust-stat .stat-label {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  margin-top: 0.2rem;
 }
 
 /* ── Footer ─────────────────────────────────────── */
@@ -239,8 +348,9 @@ body {
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.footer .email-link:hover {
-  color: #60a5fa;
+.footer .email-link:hover,
+.footer .email-link:focus-visible {
+  color: var(--color-accent-hover);
   transform: translateY(-1px);
 }
 
@@ -260,10 +370,65 @@ body {
 .footer .copyright a {
   color: var(--color-text-muted);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.footer .copyright a:hover {
+.footer .copyright a:hover,
+.footer .copyright a:focus-visible {
   color: var(--color-text);
+}
+
+/* ── Sticky CTA ─────────────────────────────────── */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: hsla(220, 20%, 8%, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  transform: translateY(100%);
+  transition: transform 0.35s ease;
+}
+
+.sticky-cta.visible {
+  transform: translateY(0);
+}
+
+.sticky-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.sticky-cta-button:hover,
+.sticky-cta-button:focus-visible {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.sticky-cta-text {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  display: none;
 }
 
 /* ── Loading State ──────────────────────────────── */
@@ -274,6 +439,26 @@ body {
   min-height: 200px;
   color: var(--color-text-muted);
   font-size: 0.875rem;
+}
+
+/* ── Skip Link (Accessibility) ──────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 100;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0 0 var(--radius-sm) 0;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 /* ── Responsive ─────────────────────────────────── */
@@ -288,7 +473,22 @@ body {
   }
 
   .page {
-    padding: var(--spacing-lg) var(--spacing-sm);
+    padding: var(--spacing-lg) var(--spacing-sm) 5rem;
+  }
+
+  .trust-stats {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .sticky-cta-text {
+    display: none;
+  }
+}
+
+@media (min-width: 481px) {
+  .sticky-cta-text {
+    display: inline;
   }
 }
 
@@ -298,40 +498,23 @@ body {
   }
 }
 
+@media (min-width: 769px) {
+  .page {
+    justify-content: center;
+    padding-bottom: var(--spacing-2xl);
+  }
+}
+
 /* ── Accessibility: Reduced Motion ──────────────── */
 @media (prefers-reduced-motion: reduce) {
   .card,
   .button,
-  .logo {
+  .logo,
+  .sticky-cta,
+  .availability-badge .pulse-dot {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
   }
-}
-
-/* ── Font Face — keep Open Sans as fallback ─────── */
-@font-face {
-  font-display: swap;
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff2') format('woff2'),
-       url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff');
-}
-@font-face {
-  font-display: swap;
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-600.woff2') format('woff2'),
-       url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-600.woff') format('woff');
-}
-@font-face {
-  font-display: swap;
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.woff2') format('woff2'),
-       url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.woff') format('woff');
 }
