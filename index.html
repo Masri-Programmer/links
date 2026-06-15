@@ -1,115 +1,156 @@
 <!DOCTYPE html>
-
-<!--
-  To change the theme, change the class on the html tag below to one of:
-  - theme-auto: Automatically switches based on user's system preferences
-  - theme-light: Forces light theme
-  - theme-dark: Forces dark theme
--->
-
-<html class="theme-auto" lang="en"> <!-- Update`class="theme-auto" with your preference -->
-
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Page Title - Change this to your name/brand (50-60 characters recommended) -->
-    <title>Masri Programmer</title>
-    <link rel="icon" type="image/x-icon" href="/images/avatar.png"> <!-- Update this with your own favicon -->
+    <!-- SEO -->
+    <title>Masri Programmer — Links</title>
+    <meta name="description" content="All links for Masri Programmer — Software Developer in Oldenburg, Germany. Website, blog, social media, scheduling, and more.">
+    <meta name="keywords" content="Masri Programmer, Software Developer, Oldenburg, Germany, links">
+    <meta name="author" content="Mohamad Masri">
+    <link rel="canonical" href="https://links.masri-programmer.de">
+    <link rel="icon" type="image/x-icon" href="images/avatar.png">
 
-    <!-- Meta Description - Write a description (150-160 characters recommended) -->
-    <meta name="description" content="Replace this with your own, this appears in search results and when sharing.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Masri Programmer — Links">
+    <meta property="og:description" content="All links for Masri Programmer — Software Developer in Oldenburg, Germany.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://links.masri-programmer.de">
 
-    <!-- Keywords -->
-    <meta name="keywords" content="your name, industry, and specialties">
-
-    <!-- Canonical URL - Helps prevent duplicate content issues -->
-    <meta rel="canonical" href="https://yourwebsite.com">
-
-    <!-- Author Information -->
-    <meta name="author" content="Your Name">
+    <!-- Fonts — Inter from bunny.net (same as invoice template) -->
+    <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700" rel="stylesheet">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/brands.css">
-
-    <!-- Masri Programmer Extended Stylesheet (Optional) -->
-    <!-- <link rel="stylesheet" href="css/brands-extended.css"> -->
-    <!-- Learn more at https://github.com/sethcottle/Masri Programmer-extended.
-         Remove comments if you've added Masri Programmer Extended dependencies -->
-
-  </head>
+</head>
 
 <body>
+    <main class="page" id="page">
+        <div class="card" id="card">
+            <div class="loading-placeholder" id="loading">
+                Loading...
+            </div>
+        </div>
+    </main>
 
-    <div class="container">
-        <div class="column">
+    <script>
+        function render(profile) {
+            // Set background image from profile data
+            document.body.style.backgroundImage = `url('${profile.company.background_url}')`;
 
-            <!--
-              By default, the Avatar is rounded. Use the following:
-              - avatar--rounded: Automatically rounds the image
-              - avatar--soft: Slightly rounds the image
-              - avatar--none: Removes any rounding
+            // Build the page content
+            document.getElementById('card').innerHTML = `
+                <!-- Profile Header -->
+                <header class="profile">
+                    <div class="logo">
+                        <img src="${profile.company.logo_url}" alt="${profile.company.name} Logo">
+                    </div>
+                    <h1>${profile.company.name}</h1>
+                    <p class="subtitle">Software Developer · Oldenburg, Germany</p>
+                    <div class="contact-info">
+                        <span>${profile.contact.street} · ${profile.contact.city}</span><br>
+                        <a href="tel:${profile.contact.phone_link}">${profile.contact.phone_display}</a>
+                    </div>
+                </header>
 
-              Be sure to replace the src with your own image path and update the alt text
-            -->
-            <img class="avatar avatar--rounded" src="images/avatar.png" srcset="images/avatar@2x.png 2x" alt="Masri Programmer">
+                <hr class="divider">
 
-            <!-- Replace with your name or brand -->
-            <h1>
-              <div>Masri Programmer</div>
-            </h1>
+                <!-- Link Buttons -->
+                <nav class="button-stack" role="navigation" aria-label="Social and business links">
 
-            <!-- Add a short description about yourself or your brand -->
-            <p>Software Developer - Oldenburg. Germany</p>
+                    <a class="button button-coffee" href="https://buymeacoffee.com/mohmasri97u" target="_blank" rel="noopener" role="button" style="animation-delay: 0.05s">
+                        <img class="icon" aria-hidden="true" src="images/icons/buy-me-a-coffee.svg" alt="">Buy Me A Coffee
+                    </a>
 
-            <!-- All your buttons go here -->
-            <div class="button-stack" role="navigation">
+                    <a class="button button-cal" href="https://cal.com/masri-programmer-f7j951/30min?duration=30" target="_blank" rel="noopener" role="button" style="animation-delay: 0.1s">
+                        <img class="icon" aria-hidden="true" src="images/icons/cal.svg" alt="">Schedule a Call
+                    </a>
 
-              <!-- Buy Me A Coffee -->
-              <a class="button button-coffee" href="https://buymeacoffee.com/mohmasri97u" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/buy-me-a-coffee.svg" alt="Buy Me A Coffee Logo">Buy Me A Coffee</a>
+                    <a class="button button-default" href="https://masri-programmer.de/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.15s">
+                        <img class="icon" aria-hidden="true" src="images/icons/generic-website.svg" alt="">Website
+                    </a>
 
-              <!-- Cal.com -->
-              <a class="button button-cal" href="https://cal.com/masri-programmer-f7j951/30min?duration=30" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/cal.svg" alt="Cal.com Logo">Schedule with Cal.com</a>
+                    <a class="button button-default" href="https://masri.blog" target="_blank" rel="noopener" role="button" style="animation-delay: 0.2s">
+                        <img class="icon" aria-hidden="true" src="images/icons/generic-blog.svg" alt="">Blog
+                    </a>
 
-              <!-- Website -->
-              <a class="button button-default" href="https://masri-programmer.de/" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/generic-website.svg" alt="Website Icon">Website</a>
+                    <a class="button button-obsidian" href="https://omnivault.masri-programmer.de/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.25s">
+                        <img class="icon" aria-hidden="true" src="images/icons/obsidian.svg" alt="">Omnivault AI
+                    </a>
 
-              <!-- Blog -->
-              <a class="button button-default" href="https://masri.blog" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/generic-blog.svg" alt="Blog Icon">Blog</a>
+                    <a class="button button-github" href="https://github.com/Masri-Programmer" target="_blank" rel="noopener" role="button" style="animation-delay: 0.3s">
+                        <img class="icon" aria-hidden="true" src="images/icons/github.svg" alt="">GitHub
+                    </a>
 
-              <!-- Obsidian Omnivault AI Template -->
-              <a class="button button-obsidian" href="https://omnivault.masri-programmer.de/" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/obsidian.svg" alt="Obsidian Logo">Omnivault AI</a>
+                    <a class="button button-instagram" href="https://www.instagram.com/masri.programmer/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.35s">
+                        <img class="icon" aria-hidden="true" src="images/icons/instagram.svg" alt="">Instagram
+                    </a>
 
-              <!-- GitHub -->
-              <a class="button button-github" href="https://github.com/Masri-Programmer" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/github.svg" alt="GitHub Logo">GitHub</a>
+                    <a class="button button-faceb" href="https://www.facebook.com/mhamad.masri8" target="_blank" rel="noopener" role="button" style="animation-delay: 0.4s">
+                        <img class="icon" aria-hidden="true" src="images/icons/facebook.svg" alt="">Facebook
+                    </a>
 
-              <!-- Instagram -->
-              <a class="button button-instagram" href="https://www.instagram.com/masri.programmer/" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/instagram.svg" alt="Instagram Logo">Instagram</a>
+                    <a class="button button-linked" href="https://www.linkedin.com/in/mohamad-masri-89778915a/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.45s">
+                        <img class="icon" aria-hidden="true" src="images/icons/linkedin.svg" alt="">LinkedIn
+                    </a>
 
-              <!-- Facebook -->
-              <a class="button button-faceb" href="https://www.facebook.com/mhamad.masri8" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/facebook.svg" alt="Facebook Logo">Facebook</a>
+                    <a class="button button-whatsapp" href="https://wa.me/4917631579669" target="_blank" rel="noopener" role="button" style="animation-delay: 0.5s">
+                        <img class="icon" aria-hidden="true" src="images/icons/whatsapp.svg" alt="">WhatsApp
+                    </a>
 
-              <!-- LinkedIn -->
-              <a class="button button-linked" href="https://www.linkedin.com/in/mohamad-masri-89778915a/" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/linkedin.svg" alt="LinkedIn Logo">LinkedIn</a>
+                    <a class="button button-default" href="https://g.page/r/CQl3_s6R1DkiEAE/review" target="_blank" rel="noopener" role="button" style="animation-delay: 0.55s">
+                        <img class="icon" aria-hidden="true" src="images/icons/generic-review.svg" alt="">Google Reviews
+                    </a>
 
-              <!-- WhatsApp -->
-              <a class="button button-whatsapp" href="https://wa.me/4917631579669" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/whatsapp.svg" alt="WhatsApp Logo">WhatsApp</a>
+                </nav>
 
-              <!-- Google Reviews -->
-              <a class="button button-default" href="https://g.page/r/CQl3_s6R1DkiEAE/review" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/generic-review.svg" alt="Review Icon">Google Reviews</a>
+                <!-- Footer -->
+                <footer class="footer">
+                    <a href="mailto:${profile.contact.email}" class="email-link">
+                        <svg class="email-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        ${profile.contact.email}
+                    </a>
+                    <p class="copyright">
+                        Building software since 2018 ·
+                        <a href="https://github.com/Masri-Programmer" target="_blank" rel="noopener">${profile.company.name}</a>
+                    </p>
+                </footer>
+            `;
+        }
 
-      </div>
+        // Initialize — fetch private.json and render
+        async function init() {
+            try {
+                const res = await fetch('./private.json');
+                if (!res.ok) throw new Error('Could not load private.json');
+                const profile = await res.json();
+                render(profile);
+            } catch (err) {
+                console.error(err);
+                // Fallback: render with hardcoded defaults if JSON fails (e.g. on file:// protocol)
+                render({
+                    company: {
+                        name: 'Masri Programmer',
+                        logo_url: 'https://masri.uber.space/images/email/logo.svg',
+                        background_url: 'https://masri.uber.space/images/email/bg2.png'
+                    },
+                    contact: {
+                        street: 'Nettelbeckstr. 10',
+                        city: '26131 Oldenburg',
+                        phone_display: '+49 (176) 31579669',
+                        phone_link: '+4917631579669',
+                        email: 'hallo@masri-programmer.de'
+                    }
+                });
+            }
+        }
 
-      <!-- Feel free to add your own footer information, including updating `privacy.html` to reflect how your Masri Programmer fork is set up -->
-      <footer>
-        <a href="privacy.html">Privacy Policy</a> | BUILDING SOFTWARE SINCE 2018. <a href="https://github.com/masriprogrammer/" target="_blank" rel="noopener">Masri Programmer</a>
-      </footer>
-
-    </div>
-  </div>
-
+        init();
+    </script>
 </body>
-
 </html>

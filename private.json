@@ -1,0 +1,26 @@
+{
+    "company": {
+        "name": "Masri Programmer",
+        "logo_url": "https://masri.uber.space/images/email/logo.svg",
+        "background_url": "https://masri.uber.space/images/email/bg2.png"
+    },
+    "contact": {
+        "street": "Nettelbeckstr. 10",
+        "city": "26131 Oldenburg",
+        "phone_display": "+49 (176) 31579669",
+        "phone_link": "+4917631579669",
+        "email": "hallo@masri-programmer.de"
+    },
+    "legal": {
+        "tax_id_label": "USt-IDNr.",
+        "tax_id": "DE454025250",
+        "local_tax_number": "DE454025250",
+        "tax_note": "Gemäß § 19 UStG wird keine Umsatzsteuer berechnet."
+    },
+    "bank": {
+        "holder": "Mohamad Masri",
+        "name": "Check24 Bank AG",
+        "iban": "DE72500240248842074530",
+        "bic": "DEFFDEFFXXX"
+    }
+}
