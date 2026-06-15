@@ -50,7 +50,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css?v=3">
+    <link rel="stylesheet" href="css/style.css?v=4">
     <link rel="stylesheet" href="css/brands.css">
 
     <!-- FOUC Prevention (from Blade template pattern) -->
@@ -272,7 +272,7 @@
     // Number counting animation
     function initCounters() {
         const counters = document.querySelectorAll('.counter');
-        const speed = 200; 
+        const speed = 100; 
 
         // Dropped threshold to 0.1 to trigger as soon as the element enters view
         const observer = new IntersectionObserver((entries, observer) => {
@@ -283,11 +283,19 @@
                     const decimals = +counter.getAttribute('data-decimals') || 0;
                     const inc = target / speed;
 
+                    let currentCount = 0;
+
                     function updateCount() {
-                        const count = +counter.innerText;
-                        if (count < target) {
-                            counter.innerText = (count + inc).toFixed(decimals);
-                            setTimeout(updateCount, 10);
+                        if (currentCount < target) {
+                            currentCount += inc;
+                            // Ensure we don't overshoot
+                            if (currentCount > target) currentCount = target;
+                            
+                            counter.innerText = currentCount.toFixed(decimals);
+                            
+                            if (currentCount < target) {
+                                requestAnimationFrame(updateCount);
+                            }
                         } else {
                             counter.innerText = target.toFixed(decimals);
                         }
