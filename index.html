@@ -113,6 +113,31 @@
         // Set background image
         document.body.style.backgroundImage = `url('${profile.company.background_url}')`;
 
+        // Generate buttons dynamic HTML
+        let delay = 0.05;
+        let buttonsHtml = '';
+        if (profile.sections && Array.isArray(profile.sections)) {
+            profile.sections.forEach((section, sIndex) => {
+                if (sIndex > 0) {
+                    buttonsHtml += `<div class="button-group-separator"></div>`;
+                }
+                buttonsHtml += `<span class="section-label" aria-hidden="true">${section.label}</span>`;
+                
+                if (section.buttons && Array.isArray(section.buttons)) {
+                    section.buttons.forEach(btn => {
+                        if (btn.active !== false) {
+                            buttonsHtml += `
+                                <a class="button ${btn.class}" href="${btn.link}" target="_blank" rel="noopener" role="button" style="animation-delay: ${delay.toFixed(2)}s" aria-label="${btn.aria_label}">
+                                    <img class="icon" aria-hidden="true" src="${btn.logo}" alt="" width="19" height="19">${btn.name}
+                                </a>
+                            `;
+                            delay += 0.05;
+                        }
+                    });
+                }
+            });
+        }
+
         document.getElementById('card').innerHTML = `
             <header class="profile">
                 <a href="https://masri-programmer.de/" target="_blank" rel="noopener" class="logo" aria-label="Visit ${profile.company.name} website">
@@ -132,61 +157,7 @@
             <hr class="divider" aria-hidden="true">
 
             <nav class="button-stack" id="links" role="navigation" aria-label="Social and business links">
-                <span class="section-label" aria-hidden="true">Work with me</span>
-
-                <a class="button button-coffee" href="https://buymeacoffee.com/mohmasri97u" target="_blank" rel="noopener" role="button" style="animation-delay: 0.05s" aria-label="Support me on Buy Me A Coffee">
-                    <img class="icon" aria-hidden="true" src="images/icons/buy-me-a-coffee.svg" alt="" width="19" height="19">Buy Me A Coffee
-                </a>
-
-                <a class="button button-cal" href="https://cal.com/masri-programmer-f7j951/30min?duration=30" target="_blank" rel="noopener" role="button" style="animation-delay: 0.1s" aria-label="Schedule a 30-minute call via Cal.com">
-                    <img class="icon" aria-hidden="true" src="images/icons/cal.svg" alt="" width="19" height="19">Schedule a Call
-                </a>
-
-                <!-- <a class="button button-upwork" href="https://www.upwork.com/freelancers/~0141405ef520d50588?mp_source=share" target="_blank" rel="noopener" role="button" style="animation-delay: 0.15s" aria-label="Hire me on Upwork">
-                    <img class="icon" aria-hidden="true" src="images/icons/upwork.svg" alt="" width="19" height="19">Upwork
-                </a> -->
-
-                <div class="button-group-separator"></div>
-                <span class="section-label" aria-hidden="true">Explore</span>
-
-                <a class="button button-default" href="https://masri-programmer.de/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.2s" aria-label="Visit my website masri-programmer.de">
-                    <img class="icon" aria-hidden="true" src="images/icons/generic-website.svg" alt="" width="19" height="19">Website
-                </a>
-
-                <a class="button button-default" href="https://masri.blog" target="_blank" rel="noopener" role="button" style="animation-delay: 0.25s" aria-label="Read my blog at masri.blog">
-                    <img class="icon" aria-hidden="true" src="images/icons/generic-blog.svg" alt="" width="19" height="19">Blog
-                </a>
-
-                <a class="button button-obsidian" href="https://omnivault.masri-programmer.de/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.3s" aria-label="Explore Omnivault AI Obsidian Template">
-                    <img class="icon" aria-hidden="true" src="images/icons/obsidian.svg" alt="" width="19" height="19">Omnivault AI
-                </a>
-
-                <div class="button-group-separator"></div>
-                <span class="section-label" aria-hidden="true">Connect</span>
-
-                <a class="button button-github" href="https://github.com/Masri-Programmer" target="_blank" rel="noopener" role="button" style="animation-delay: 0.35s" aria-label="View my GitHub profile">
-                    <img class="icon" aria-hidden="true" src="images/icons/github.svg" alt="" width="19" height="19">GitHub
-                </a>
-
-                <a class="button button-instagram" href="https://www.instagram.com/masri.programmer/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.4s" aria-label="Follow me on Instagram">
-                    <img class="icon" aria-hidden="true" src="images/icons/instagram.svg" alt="" width="19" height="19">Instagram
-                </a>
-
-                <a class="button button-faceb" href="https://www.facebook.com/profile.php?id=61582289406696" target="_blank" rel="noopener" role="button" style="animation-delay: 0.45s" aria-label="Connect on Facebook">
-                    <img class="icon" aria-hidden="true" src="images/icons/facebook.svg" alt="" width="19" height="19">Facebook
-                </a>
-
-                <a class="button button-linked" href="https://www.linkedin.com/in/mohamad-masri-89778915a/" target="_blank" rel="noopener" role="button" style="animation-delay: 0.5s" aria-label="Connect on LinkedIn">
-                    <img class="icon" aria-hidden="true" src="images/icons/linkedin.svg" alt="" width="19" height="19">LinkedIn
-                </a>
-
-                <a class="button button-whatsapp" href="https://wa.me/4917631579669" target="_blank" rel="noopener" role="button" style="animation-delay: 0.55s" aria-label="Message me on WhatsApp">
-                    <img class="icon" aria-hidden="true" src="images/icons/whatsapp.svg" alt="" width="19" height="19">WhatsApp
-                </a>
-
-                <a class="button button-google" href="https://g.page/r/CQl3_s6R1DkiEAE/review" target="_blank" rel="noopener" role="button" style="animation-delay: 0.6s" aria-label="Leave a Google review">
-                    <img class="icon" aria-hidden="true" src="images/icons/google.svg" alt="" width="19" height="19">Google Reviews
-                </a>
+                ${buttonsHtml}
             </nav>
 
             <section class="trust-section" aria-label="Experience highlights">
@@ -266,7 +237,128 @@
                     phone_display: '+49 (176) 31579669',
                     phone_link: '+4917631579669',
                     email: 'hallo@masri-programmer.de'
-                }
+                },
+                sections: [
+                    {
+                        label: "Work with me",
+                        buttons: [
+                            {
+                                name: "Buy Me A Coffee",
+                                link: "https://buymeacoffee.com/mohmasri97u",
+                                class: "button-coffee",
+                                logo: "images/icons/buy-me-a-coffee.svg",
+                                aria_label: "Support me on Buy Me A Coffee",
+                                active: true
+                            },
+                            {
+                                name: "Schedule a Call",
+                                link: "https://cal.com/masri-programmer-f7j951/30min?duration=30",
+                                class: "button-cal",
+                                logo: "images/icons/cal.svg",
+                                aria_label: "Schedule a 30-minute call via Cal.com",
+                                active: true
+                            },
+                            {
+                                name: "Upwork",
+                                link: "https://www.upwork.com/freelancers/~0141405ef520d50588?mp_source=share",
+                                class: "button-upwork",
+                                logo: "images/icons/upwork.svg",
+                                aria_label: "Hire me on Upwork",
+                                active: false
+                            }
+                        ]
+                    },
+                    {
+                        label: "Explore",
+                        buttons: [
+                            {
+                                name: "Website",
+                                link: "https://masri-programmer.de/",
+                                class: "button-default",
+                                logo: "images/icons/generic-website.svg",
+                                aria_label: "Visit my website masri-programmer.de",
+                                active: true
+                            },
+                            {
+                                name: "Blog",
+                                link: "https://masri.blog",
+                                class: "button-default",
+                                logo: "images/icons/generic-blog.svg",
+                                aria_label: "Read my blog at masri.blog",
+                                active: true
+                            },
+                            {
+                                name: "Resume",
+                                link: "https://resume.masri.blog/",
+                                class: "button-default",
+                                logo: "images/icons/generic-website.svg",
+                                aria_label: "Visit my resume resume.masri.blog",
+                                active: true
+                            },
+                            {
+                                name: "Omnivault AI",
+                                link: "https://omnivault.masri-programmer.de/",
+                                class: "button-obsidian",
+                                logo: "images/icons/obsidian.svg",
+                                aria_label: "Explore Omnivault AI Obsidian Template",
+                                active: true
+                            }
+                        ]
+                    },
+                    {
+                        label: "Connect",
+                        buttons: [
+                            {
+                                name: "GitHub",
+                                link: "https://github.com/Masri-Programmer",
+                                class: "button-github",
+                                logo: "images/icons/github.svg",
+                                aria_label: "View my GitHub profile",
+                                active: true
+                            },
+                            {
+                                name: "Instagram",
+                                link: "https://www.instagram.com/masri.programmer/",
+                                class: "button-instagram",
+                                logo: "images/icons/instagram.svg",
+                                aria_label: "Follow me on Instagram",
+                                active: true
+                            },
+                            {
+                                name: "Facebook",
+                                link: "https://www.facebook.com/profile.php?id=61582289406696",
+                                class: "button-faceb",
+                                logo: "images/icons/facebook.svg",
+                                aria_label: "Connect on Facebook",
+                                active: true
+                            },
+                            {
+                                name: "LinkedIn",
+                                link: "https://www.linkedin.com/in/mohamad-masri-89778915a/",
+                                class: "button-linked",
+                                logo: "images/icons/linkedin.svg",
+                                aria_label: "Connect on LinkedIn",
+                                active: true
+                            },
+                            {
+                                name: "WhatsApp",
+                                link: "https://wa.me/4917631579669",
+                                class: "button-whatsapp",
+                                logo: "images/icons/whatsapp.svg",
+                                aria_label: "Message me on WhatsApp",
+                                active: true
+                            },
+                            {
+                                name: "Google Reviews",
+                                link: "https://g.page/r/CQl3_s6R1DkiEAE/review",
+                                class: "button-google",
+                                logo: "images/icons/google.svg",
+                                aria_label: "Leave a Google review",
+                                active: true
+                            }
+                        ]
+                    }
+                ]
             });
         }
 

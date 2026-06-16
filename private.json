@@ -22,5 +22,126 @@
         "name": "Check24 Bank AG",
         "iban": "DE72500240248842074530",
         "bic": "DEFFDEFFXXX"
-    }
+    },
+    "sections": [
+        {
+            "label": "Work with me",
+            "buttons": [
+                {
+                    "name": "Buy Me A Coffee",
+                    "link": "https://buymeacoffee.com/mohmasri97u",
+                    "class": "button-coffee",
+                    "logo": "images/icons/buy-me-a-coffee.svg",
+                    "aria_label": "Support me on Buy Me A Coffee",
+                    "active": true
+                },
+                {
+                    "name": "Schedule a Call",
+                    "link": "https://cal.com/masri-programmer-f7j951/30min?duration=30",
+                    "class": "button-cal",
+                    "logo": "images/icons/cal.svg",
+                    "aria_label": "Schedule a 30-minute call via Cal.com",
+                    "active": true
+                },
+                {
+                    "name": "Upwork",
+                    "link": "https://www.upwork.com/freelancers/~0141405ef520d50588?mp_source=share",
+                    "class": "button-upwork",
+                    "logo": "images/icons/upwork.svg",
+                    "aria_label": "Hire me on Upwork",
+                    "active": false
+                }
+            ]
+        },
+        {
+            "label": "Explore",
+            "buttons": [
+                {
+                    "name": "Website",
+                    "link": "https://masri-programmer.de/",
+                    "class": "button-default",
+                    "logo": "images/icons/generic-website.svg",
+                    "aria_label": "Visit my website masri-programmer.de",
+                    "active": true
+                },
+                {
+                    "name": "Blog",
+                    "link": "https://masri.blog",
+                    "class": "button-default",
+                    "logo": "images/icons/generic-blog.svg",
+                    "aria_label": "Read my blog at masri.blog",
+                    "active": true
+                },
+                {
+                    "name": "Resume",
+                    "link": "https://resume.masri.blog/",
+                    "class": "button-default",
+                    "logo": "images/icons/generic-website.svg",
+                    "aria_label": "Visit my resume resume.masri.blog",
+                    "active": true
+                },
+                {
+                    "name": "Omnivault AI",
+                    "link": "https://omnivault.masri-programmer.de/",
+                    "class": "button-obsidian",
+                    "logo": "images/icons/obsidian.svg",
+                    "aria_label": "Explore Omnivault AI Obsidian Template",
+                    "active": true
+                }
+            ]
+        },
+        {
+            "label": "Connect",
+            "buttons": [
+                {
+                    "name": "GitHub",
+                    "link": "https://github.com/Masri-Programmer",
+                    "class": "button-github",
+                    "logo": "images/icons/github.svg",
+                    "aria_label": "View my GitHub profile",
+                    "active": true
+                },
+                {
+                    "name": "Instagram",
+                    "link": "https://www.instagram.com/masri.programmer/",
+                    "class": "button-instagram",
+                    "logo": "images/icons/instagram.svg",
+                    "aria_label": "Follow me on Instagram",
+                    "active": true
+                },
+                {
+                    "name": "Facebook",
+                    "link": "https://www.facebook.com/profile.php?id=61582289406696",
+                    "class": "button-faceb",
+                    "logo": "images/icons/facebook.svg",
+                    "aria_label": "Connect on Facebook",
+                    "active": true
+                },
+                {
+                    "name": "LinkedIn",
+                    "link": "https://www.linkedin.com/in/mohamad-masri-89778915a/",
+                    "class": "button-linked",
+                    "logo": "images/icons/linkedin.svg",
+                    "aria_label": "Connect on LinkedIn",
+                    "active": true
+                },
+                {
+                    "name": "WhatsApp",
+                    "link": "https://wa.me/4917631579669",
+                    "class": "button-whatsapp",
+                    "logo": "images/icons/whatsapp.svg",
+                    "aria_label": "Message me on WhatsApp",
+                    "active": true
+                },
+                {
+                    "name": "Google Reviews",
+                    "link": "https://g.page/r/CQl3_s6R1DkiEAE/review",
+                    "class": "button-google",
+                    "logo": "images/icons/google.svg",
+                    "aria_label": "Leave a Google review",
+                    "active": true
+                }
+            ]
+        }
+    ]
 }
