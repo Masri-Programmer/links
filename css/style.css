@@ -5,25 +5,32 @@
  * v2.0 — Production-ready with FOUC prevention, accessibility, CRO enhancements
  */
 
-/* ── Custom Properties ─────────────────────────── */
+/* ── Custom Properties (Derived from masri-programmer-app app.css) ── */
 :root {
-  /* Colors — from invoice template */
-  --color-text:        hsl(0 0% 92.1%);
-  --color-text-muted:  hsl(0 0% 60%);
-  --color-bg:          #000000;
-  --color-surface:     hsla(0, 0%, 92%, 0.08);
-  --color-border:      hsla(0, 0%, 92%, 0.15);
-  --color-accent:      #3b82f6;
-  --color-accent-hover:#60a5fa;
-  --color-success:     #22c55e;
+  /* Colors — Warm Dark & Terracotta Claude Palette */
+  --color-primary:             #cc785c;
+  --color-primary-active:      #a9583e;
+  --color-primary-disabled:    #e6dfd8;
+  --color-text:                #faf9f5;
+  --color-text-muted:          #a09d96;
+  --color-bg:                  #181715;
+  --color-surface:             #252320;
+  --color-border:              rgba(230, 223, 216, 0.14);
+  --color-accent:              #cc785c;
+  --color-accent-hover:        #a9583e;
+  --color-success:             #5db872;
+  --color-warning:             #d4a017;
+  --color-destructive:         #c64545;
 
-  /* Glass card */
-  --glass-bg:          hsla(0, 0%, 100%, 0.06);
-  --glass-border:      hsla(0, 0%, 100%, 0.12);
-  --glass-blur:        20px;
+  /* Glass card & surface */
+  --glass-bg:                  rgba(37, 35, 32, 0.85);
+  --glass-border:              rgba(230, 223, 216, 0.14);
+  --glass-blur:                20px;
 
   /* Typography */
-  --font-sans: 'Inter', 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sans: 'Instrument Sans', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: 'Copernicus', 'Cormorant Garamond', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
   /* Spacing */
   --spacing-xs:  0.5rem;
@@ -35,14 +42,14 @@
 
   /* Radius */
   --radius-sm:   0.5rem;
-  --radius-md:   0.625rem;
-  --radius-lg:   0.875rem;
+  --radius-md:   0.75rem;
+  --radius-lg:   1rem;
   --radius-full: 9999px;
 }
 
 /* ── FOUC Prevention ────────────────────────────── */
 html {
-  background-color: #000000;
+  background-color: #181715;
 }
 
 /* ── Base ───────────────────────────────────────── */
@@ -55,9 +62,9 @@ body {
   line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-bg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: 
+    radial-gradient(ellipse 80% 80% at 50% -20%, rgba(204, 120, 92, 0.15), rgba(24, 23, 21, 0)),
+    radial-gradient(ellipse 60% 60% at 50% 120%, rgba(37, 35, 32, 0.8), rgba(24, 23, 21, 0));
   background-attachment: fixed;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -132,10 +139,11 @@ body {
 }
 
 .profile h1 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
   margin: 0 0 var(--spacing-xs);
   color: var(--color-text);
 }

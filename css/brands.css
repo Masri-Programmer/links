@@ -31,11 +31,11 @@
 /* Brand-Specific Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-/* Default */
+/* Default — Masri Programmer Terracotta Brand */
 .button.button-default {
 	--button-text:#ffffff;
-	--button-background:#2457F5;
-	--button-border:1px solid #ffffff;
+	--button-background:#cc785c;
+	--button-border:1px solid rgba(230, 223, 216, 0.2);
 }
 
 /* Amazon */
