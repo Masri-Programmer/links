@@ -103,7 +103,7 @@
             "buttons": [
                 {
                     "name": "GitHub",
-                    "link": "https://github.com/Masri-Programmer",
+                    "link": "https://github.com/masrisystems",
                     "class": "button-github",
                     "logo": "images/icons/github.svg",
                     "aria_label": "View my GitHub profile",

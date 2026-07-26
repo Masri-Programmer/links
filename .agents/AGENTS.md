@@ -22,7 +22,7 @@ When modifying the project:
      ```json
      {
        "name": "GitHub",
-       "link": "https://github.com/Masri-Programmer",
+       "link": "https://github.com/masrisystems",
        "class": "button-github",
        "logo": "images/icons/github.svg",
        "aria_label": "Follow me on GitHub",
