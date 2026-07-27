@@ -29,7 +29,7 @@
             "buttons": [
                 {
                     "name": "GitHub Sponsors",
-                    "link": "https://github.com/sponsors/Masri-Programmer",
+                    "link": "https://github.com/sponsors/Masrisystems",
                     "class": "button-github",
                     "logo": "images/icons/github.svg",
                     "aria_label": "Sponsor me on GitHub",
@@ -37,7 +37,7 @@
                 },
                 {
                     "name": "Schedule a Call",
-                    "link": "https://cal.com/masri-programmer-f7j951/30min?duration=30",
+                    "link": "https://cal.com/masrisystems-f7j951/30min?duration=30",
                     "class": "button-cal",
                     "logo": "images/icons/cal.svg",
                     "aria_label": "Schedule a 30-minute call via Cal.com",
