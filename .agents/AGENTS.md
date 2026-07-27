@@ -1,6 +1,6 @@
 # LittleLink Links Page Agent Guidelines
 
-This directory contains the code for the links landing page (`links.masri-programmer.de`) of Mohamad Masri (Masri Programmer), built on the LittleLink template.
+This directory contains the code for the links landing page (`links.masrisystems.com`) of Mohamad Masri (Masri Systems), built on the LittleLink template.
 
 ## Architectural Context
 
@@ -15,6 +15,7 @@ This directory contains the code for the links landing page (`links.masri-progra
 ## Development Rules & Conventions
 
 When modifying the project:
+
 1. **Adding/Modifying Links**:
    - **Do NOT** hardcode links directly into `index.html`.
    - **Do** edit `private.json` to update links, buttons, order, active state, icons, or contact info.

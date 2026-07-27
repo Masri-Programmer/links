@@ -1,6 +1,6 @@
 {
     "company": {
-        "name": "Masri Programmer",
+        "name": "Masri Systems",
         "logo_url": "https://masri.uber.space/images/email/logo.svg",
         "background_url": "https://masri.uber.space/images/email/bg2.png"
     },
@@ -9,7 +9,7 @@
         "city": "26131 Oldenburg",
         "phone_display": "+49 (176) 31579669",
         "phone_link": "+4917631579669",
-        "email": "hallo@masri-programmer.de"
+        "email": "hallo@masrisystems.com"
     },
     "legal": {
         "tax_id_label": "USt-IDNr.",
@@ -45,7 +45,7 @@
                 },
                 {
                     "name": "Contact Form",
-                    "link": "https://masri-programmer.de/contact",
+                    "link": "https://masrisystems.com/contact",
                     "class": "button-default",
                     "logo": "images/icons/email.svg",
                     "aria_label": "Contact Form",
@@ -66,31 +66,31 @@
             "buttons": [
                 {
                     "name": "Website",
-                    "link": "https://masri-programmer.de/",
+                    "link": "https://masrisystems.com/",
                     "class": "button-default",
                     "logo": "images/icons/generic-website.svg",
-                    "aria_label": "Visit my website masri-programmer.de",
+                    "aria_label": "Visit my website masrisystems.com",
                     "active": true
                 },
                 {
                     "name": "Blog",
-                    "link": "https://masri-programmer.de/blog",
+                    "link": "https://masrisystems.com/blog",
                     "class": "button-default",
                     "logo": "images/icons/generic-blog.svg",
-                    "aria_label": "Read my blog at masri-programmer.de/blog",
+                    "aria_label": "Read my blog at masrisystems.com/blog",
                     "active": true
                 },
                 {
                     "name": "Resume",
-                    "link": "https://resume.masri-programmer.de/",
+                    "link": "https://resume.masrisystems.com/",
                     "class": "button-default",
                     "logo": "images/icons/generic-website.svg",
-                    "aria_label": "Visit my resume at resume.masri-programmer.de",
+                    "aria_label": "Visit my resume at resume.masrisystems.com",
                     "active": true
                 },
                 {
                     "name": "Omnivault AI",
-                    "link": "https://omnivault.masri-programmer.de/",
+                    "link": "https://omnivault.masrisystems.com/",
                     "class": "button-obsidian",
                     "logo": "images/icons/obsidian.svg",
                     "aria_label": "Explore Omnivault AI Obsidian Template",
